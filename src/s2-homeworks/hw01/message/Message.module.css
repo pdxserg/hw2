@@ -1,4 +1,6 @@
 .message {
+    display: flex;
+    justify-content: flex-end;
 
 }
 
@@ -7,7 +9,7 @@
 }
 
 .imageAndText img {
-
+height: 40px;
 }
 
 .text {
@@ -19,11 +21,12 @@
 }
 
 .name {
+    color: red;
 
 }
 
 .messageText {
-
+width: 300px;
 }
 
 .time {

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {DetailedHTMLProps} from 'react'
 import Message from './message/Message'
 import MessageSender from './message-sender/MessageSender'
 import s2 from '../../s1-main/App.module.css'
@@ -14,14 +14,21 @@ import avatar from './avatar.png'
 * */
 
 // нужно создать правильный тип вместо any
-export type MessageType = any
+// type AvatarType={
+//     src: any
+// }
+export type MessageType = {
+    id: number
+    user:{avatar: any, name: string}
+    message:{text: string, time: string}
+}
 
 // структуру объекта не менять
 export const message0: MessageType = {
     id: 0,
     user: {
         avatar: avatar, // можно менять
-        name: 'Some Name',  // можно менять
+        name: 'Pituxa  (must be Right)',  // можно менять
     },
     message: {
         text: 'some textsome textsome textsome textsome textsome textsome text', // можно менять
@@ -36,7 +43,7 @@ export const friendMessage0: MessageType = {
     },
     message: {
         text: 'зеркальное сообщение для тренировки css', // можно менять
-        time: '22:00', // можно менять
+        time: '22:10', // можно менять
     },
 }
 
