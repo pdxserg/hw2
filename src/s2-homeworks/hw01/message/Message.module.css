@@ -5,11 +5,13 @@
 }
 
 .imageAndText {
-
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 20px;
 }
 
 .imageAndText img {
-height: 40px;
+    height: 40px;
 }
 
 .text {
@@ -26,7 +28,7 @@ height: 40px;
 }
 
 .messageText {
-width: 300px;
+    width: 30px;
 }
 
 .time {

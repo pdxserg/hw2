@@ -1,9 +1,10 @@
 .friendMessage {
 
+
 }
 
 .friendImageAndText {
-
+    display: flex;
 }
 
 .friendImageAndText img {
