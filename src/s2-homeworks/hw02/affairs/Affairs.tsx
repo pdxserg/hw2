@@ -1,27 +1,34 @@
-import React from 'react'
+import React, {MouseEventHandler} from 'react'
 import Affair from './affair/Affair'
-import {AffairType, FilterType} from '../HW2'
+import {AffairPriorityType, AffairType, FilterType} from '../HW2'
 import s from './Affairs.module.css'
 
 type AffairsPropsType = {
-    data: any // need to fix any
-    setFilter: any
+
+    data: AffairType[]//(affairs: AffairType, filter: FilterType) =>void
+    setFilter: (type:FilterType)=>void
     deleteAffairCallback: any
     filter: FilterType
+    // data: any // need to fix any
+    // setFilter: any
+    // deleteAffairCallback: any
+    // filter: FilterType
 }
 
 function Affairs(props: AffairsPropsType) {
     const setAll = () => {
+        props.setFilter("all")
         // need to fix
+
     }
     const setHigh = () => {
-        // need to fix
+        props.setFilter("high")
     }
     const setMiddle = () => {
-        // need to fix
+        props.setFilter("middle")
     }
     const setLow = () => {
-        // need to fix
+        props.setFilter("low")
     }
 
     const cnAll = s.button + ' ' + s.all + (props.filter === 'all' ? ' ' + s.active : '')
@@ -42,7 +49,8 @@ function Affairs(props: AffairsPropsType) {
             <div className={s.buttonContainer}>
                 <button
                     id={'hw2-button-all'}
-                    onClick={setAll}
+                  // onClick={()=> props.setFilter("all")}
+                  onClick={setAll}
                     className={cnAll}
                 >
                     All
