@@ -21,9 +21,9 @@ beforeEach(() => {
 })
 
 test('name 1', () => {
-    name = 'e'
+    name = "1"
     pureAddUser(name, setError, setName, addUserCallback)
-    expect(name).toBe('e')
+    expect(name).toBe('')
      expect(error).toBe('')
      expect(added).toBe(true)
 })
