@@ -3,11 +3,18 @@ import Greeting from './Greeting'
 import { UserType } from './HW3'
 
 type GreetingContainerPropsType = {
-    users: any // need to fix any
-    addUserCallback: any // need to fix any
+    users: Array<UserType> // need to fix any
+    addUserCallback: (name: string) =>void // need to fix any
 }
 
-export const pureAddUser = (name: any, setError: any, setName: any, addUserCallback: any) => {
+export const pureAddUser = (name: string, setError: any, setName: any, addUserCallback: any) => {
+
+   addUserCallback(name)
+    // if(name ===""){
+    //     setError("Field is required")
+    // }else {
+    //   return   setName(name)
+    // }
     // если имя пустое - показать ошибку, иначе - добавить юзера и очистить инпут
 }
 
@@ -26,11 +33,11 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
     addUserCallback,
 }) => {
     // деструктуризация пропсов
-    const [name, setName] = useState<any>('') // need to fix any
-    const [error, setError] = useState<any>('') // need to fix any
+    const [name, setName] = useState<string>('') // need to fix any
+    const [error, setError] = useState<string | null>('') // need to fix any
 
-    const setNameCallback = (e: any) => { // need to fix any
-        setName('some name') // need to fix
+    const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { // need to fix any
+        setName(e.currentTarget.value) // need to fix
 
         error && setError('')
     }
