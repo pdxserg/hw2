@@ -2,9 +2,12 @@
 }
 
 .inputAndButtonContainer {
+    display: flex;
+    gap: 30px;
 }
 
 .error {
+    color: #cc0000;
 }
 
 .input {
@@ -14,9 +17,16 @@
 }
 
 .errorInput {
+
+
 }
 
 .button {
+    width: 80px;
+    background: #0066CC;
+
+    color: white;
+    border-radius: 5px;
 }
 
 .button:focus {
@@ -26,6 +36,7 @@
 }
 
 .button:disabled {
+    opacity: 50%;
 }
 
 .text {
