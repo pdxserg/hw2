@@ -22,3 +22,6 @@
     flex-direction: column;
     gap: 36px;
 }
+.bgc{
+    background-color: goldenrod;
+}

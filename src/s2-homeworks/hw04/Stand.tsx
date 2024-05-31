@@ -9,6 +9,7 @@ const Stand = () => {
     const [error, setError] = useState<string>('')
 
     const [stateForAllCheckboxes, setChecked] = useState<boolean>(false)
+    const [stateForAllCheckboxes1, setChecked1] = useState<boolean>(false)
 
     return (
         <div id={'hw4-stand'} className={s.stand}>
@@ -43,13 +44,13 @@ const Stand = () => {
             <div className={s.buttons}>
                 {/*обычная кнопка:*/}
                 <div>
-                    <SuperButton id={'hw4-super-button-default'}>
+                    <SuperButton id={'hw4-super-button-default'} className={s.bgc}>
                         default
                     </SuperButton>
                 </div>
                 {/*красная кнопка:*/}
                 <div>
-                    <SuperButton id={'hw4-super-button-red'} xType={'red'}>
+                    <SuperButton id={'hw4-super-button-red'} xType={'red'} >
                         red
                     </SuperButton>
                 </div>
@@ -81,6 +82,7 @@ const Stand = () => {
                         id={'hw4-super-checkbox-with-text'}
                         checked={stateForAllCheckboxes}
                         onChangeChecked={setChecked}
+
                     >
                         some text
                     </SuperCheckbox>
@@ -89,8 +91,9 @@ const Stand = () => {
                 <div>
                     <SuperCheckbox
                         id={'hw4-super-checkbox-like-old'}
-                        checked={stateForAllCheckboxes}
-                        onChange={(e) => setChecked(e.currentTarget.checked)}
+                        checked={stateForAllCheckboxes1}
+                        onChangeChecked={setChecked1}
+                        // onChange={(e) => setChecked(e.currentTarget.checked)}
                     />
                 </div>
             </div>
