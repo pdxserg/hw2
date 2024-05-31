@@ -9,7 +9,7 @@ const Stand = () => {
     const [error, setError] = useState<string>('')
 
     const [stateForAllCheckboxes, setChecked] = useState<boolean>(false)
-    const [stateForAllCheckboxes1, setChecked1] = useState<boolean>(false)
+    // const [stateForAllCheckboxes1, setChecked1] = useState<boolean>(false)
 
     return (
         <div id={'hw4-stand'} className={s.stand}>
@@ -91,8 +91,8 @@ const Stand = () => {
                 <div>
                     <SuperCheckbox
                         id={'hw4-super-checkbox-like-old'}
-                        checked={stateForAllCheckboxes1}
-                        onChangeChecked={setChecked1}
+                        checked={stateForAllCheckboxes}
+                        onChangeChecked={setChecked}
                         // onChange={(e) => setChecked(e.currentTarget.checked)}
                     />
                 </div>
