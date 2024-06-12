@@ -1,4 +1,7 @@
 .sidebar {
+    display: flex;
+    border: 1px solid;
+    width: 100%;
 }
 
 .sidebar.open {
@@ -28,7 +31,9 @@
     background-color: red;
 }
 .close {
+    display: none;
 }
 
 .close img {
+
 }
