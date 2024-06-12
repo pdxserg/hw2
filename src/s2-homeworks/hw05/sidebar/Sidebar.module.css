@@ -8,15 +8,24 @@
 }
 
 .nav {
+    color: green;
+
 }
 
 .nav a {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 10px;
 }
 
 .nav a:hover {
+    color: #66d1ff;
 }
 
 .nav a.active {
+    color: red;
+    background-color: red;
 }
 .close {
 }
