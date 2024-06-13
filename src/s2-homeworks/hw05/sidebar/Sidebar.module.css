@@ -36,10 +36,10 @@
 .nav a {
     display: flex;
     flex-direction: column;
-    color: #000;
     font-weight: bold;
-    text-decoration: none;
+
     margin-right: 10px;
+
 }
 
 .nav a:hover {
@@ -48,8 +48,11 @@
 
 .nav a:active {
 
-    color: #0cb3fd;
+    color: #52859b;
 }
+/*.nav a:visited{*/
+/*    color: black;*/
+/*}*/
 
 
 .close {
@@ -67,5 +70,9 @@
 
 }
 .redd{
-    color: red;
+    color: #0cb3fd;
+}
+.black{
+    color: black;
+    text-decoration: none;
 }
