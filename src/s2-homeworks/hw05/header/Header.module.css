@@ -1,11 +1,15 @@
 .burgerMenuIcon {
+    margin-left: 20px;
 }
 
 .header {
     display: flex;
-    border: 1px solid;
+    justify-content: space-between;
     width: 100%;
+    background: #f7f8ff;
+
 }
 
 .header h1 {
+    margin-right: 20px;
 }
