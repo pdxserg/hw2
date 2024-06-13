@@ -1,5 +1,5 @@
 .sidebar {
-    position: relative;
+    /*position: relative;*/
     display: none;
     /*display: flex;*/
     /*border: 1px solid;*/
@@ -21,14 +21,15 @@
 
 .background {
     position: absolute;
-    z-index:3;
-    background-color: rgba(0, 0, 0, 0.44);
+    z-index:1;
+    background-color: rgb(49, 49, 49);
     opacity: 0.5;
-    height: 50vh;
+    height: 100vh;
+    width: 100%;
 }
 
 .nav {
-    color: green;
+
 
 }
 
@@ -50,8 +51,8 @@
     color: #0cb3fd;
 }
 
+
 .close {
-    display: none;
 }
 
 .close img {
@@ -64,4 +65,7 @@
     background: white;
     cursor: pointer;
 
+}
+.redd{
+    border-color: red;
 }
