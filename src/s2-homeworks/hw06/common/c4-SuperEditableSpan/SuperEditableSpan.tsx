@@ -49,17 +49,13 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = (
     const onBlurCallback = (e: React.FocusEvent<HTMLInputElement>) => {
         // выключить editMode при нажатии за пределами инпута // делают студенты
         setEditMode(false)
-        // if (newTitle.trim() !== "") {
-        //     onChangeText( newTitle.trim())
-        // }
-        // console.log(e)
         onBlur?.(e)
 
     }
     const onDoubleClickCallBack = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>) => {
         // включить editMode при двойном клике // делают студенты
         setEditMode(true)
-        // onDoubleClick?.(e)
+         onDoubleClick?.(e)
     }
 
     const spanClassName = s.span
