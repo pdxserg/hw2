@@ -1,5 +1,8 @@
 .buttonsContainer {
+    gap: 20px;
 }
 
 .editableSpanContainer {
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
