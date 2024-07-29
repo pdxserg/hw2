@@ -11,7 +11,7 @@
     padding-top: 30px;
     padding-bottom: 10px;
     border-bottom: 2px solid #efefef;
-    background: linear-gradient(to bottom, #c5c5c5, #ffffff);
+    background: linear-gradient(to bottom, #d6d9ff 0%, #e2e6fd 20%, #ffffff 100%);
     height:80px; /* Set a height for the element */
     width: 100%; /* Set a width for the element */
 
