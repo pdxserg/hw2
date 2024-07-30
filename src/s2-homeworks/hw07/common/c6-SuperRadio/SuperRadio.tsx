@@ -1,6 +1,8 @@
-import React, {ChangeEvent, DetailedHTMLProps, HTMLAttributes, InputHTMLAttributes, useState,} from 'react'
-import { arr } from '../../HW7'
+import React, {ChangeEvent, DetailedHTMLProps, HTMLAttributes, InputHTMLAttributes,} from 'react'
+import {arr} from '../../HW7'
 import s from './SuperRadio.module.css'
+import {Simulate} from "react-dom/test-utils";
+import loadedData = Simulate.loadedData;
 
 type DefaultRadioPropsType = DetailedHTMLProps<
 	InputHTMLAttributes<HTMLInputElement>,
@@ -11,11 +13,13 @@ type DefaultSpanPropsType = DetailedHTMLProps<
 	HTMLAttributes<HTMLSpanElement>,
 	HTMLSpanElement
 >
-type PupilArray
+// type PupilArray={
+//
+// }
 type SuperRadioPropsType = Omit<DefaultRadioPropsType, 'type'> & {
-	options?: PupilArray[]
+	options?: any[]
 	onChangeOption?: (option: any) => void
-
+	value: number
 	spanProps?: DefaultSpanPropsType // пропсы для спана
 }
 
@@ -32,7 +36,7 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
                                                    }) => {
 
 	// const [selectedValue, setSelectedValue] = useState(value);
-	  // debugger
+	// debugger
 	const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
 		if (onChangeOption) {
 			onChangeOption(e.currentTarget.value)
@@ -57,8 +61,8 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
 					onChange={onChangeCallback}
 					// name, checked, value делают студенты
 
-					  // checked={false}
-				     checked={value === o.id}
+					// checked={false}
+					checked={value == o.id}
 					value={o.id}
 					// name={name}
 
@@ -75,23 +79,52 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
 		))
 		: []
 // debugger
+	console.log(value)
 	return (
 		<div className={s.options}>
 			{mappedOptions}
-			{/*<label  >*/}
+			{/*<label>*/}
 			{/*	<input*/}
 			{/*		type={'radio'}*/}
 			{/*		onChange={onChangeCallback}*/}
 			{/*		// name, checked, value делают студенты*/}
 
 			{/*		// checked={false}*/}
-			{/*		checked={arr[0].id === arr[0].id}*/}
+			{/*		checked={value == arr[0].id}*/}
 			{/*		value={arr[0].id}*/}
 			{/*		// name={name}*/}
 
 
 			{/*	/>*/}
 			{/*	<span>{arr[0].value}</span>*/}
+			{/*</label>*/}
+			{/*<label>*/}
+			{/*	<input*/}
+			{/*		type={'radio'}*/}
+			{/*		onChange={onChangeCallback}*/}
+			{/*		// name, checked, value делают студенты*/}
+
+			{/*		// checked={true}*/}
+			{/*		 checked={value == arr[1].id}*/}
+			{/*		value={arr[1].id}*/}
+			{/*		// name={name}*/}
+
+
+			{/*	/>*/}
+			{/*	<span>{arr[1].value}</span>*/}
+			{/*</label>*/}
+			{/*<label>*/}
+			{/*	<input*/}
+			{/*		type={'radio'}*/}
+			{/*		onChange={onChangeCallback}*/}
+			{/*		// name, checked, value делают студенты*/}
+
+			{/*		// checked={false}*/}
+			{/*		checked={value == arr[2].id}*/}
+			{/*		value={arr[2].id}*/}
+			{/*		// name={name}*/}
+			{/*	/>*/}
+			{/*	<span>{arr[2].value}</span>*/}
 			{/*</label>*/}
 		</div>
 	)
