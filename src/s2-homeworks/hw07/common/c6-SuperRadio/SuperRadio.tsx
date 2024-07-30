@@ -1,4 +1,5 @@
 import React, {ChangeEvent, DetailedHTMLProps, HTMLAttributes, InputHTMLAttributes, useState,} from 'react'
+import { arr } from '../../HW7'
 import s from './SuperRadio.module.css'
 
 type DefaultRadioPropsType = DetailedHTMLProps<
@@ -10,9 +11,9 @@ type DefaultSpanPropsType = DetailedHTMLProps<
 	HTMLAttributes<HTMLSpanElement>,
 	HTMLSpanElement
 >
-
+type PupilArray
 type SuperRadioPropsType = Omit<DefaultRadioPropsType, 'type'> & {
-	options?: any[]
+	options?: PupilArray[]
 	onChangeOption?: (option: any) => void
 
 	spanProps?: DefaultSpanPropsType // пропсы для спана
@@ -56,8 +57,8 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
 					onChange={onChangeCallback}
 					// name, checked, value делают студенты
 
-					 // checked={true}
-				    checked={value === o.id}
+					  // checked={false}
+				     checked={value === o.id}
 					value={o.id}
 					// name={name}
 
@@ -74,7 +75,26 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
 		))
 		: []
 // debugger
-	return <div className={s.options}>{mappedOptions}</div>
+	return (
+		<div className={s.options}>
+			{mappedOptions}
+			{/*<label  >*/}
+			{/*	<input*/}
+			{/*		type={'radio'}*/}
+			{/*		onChange={onChangeCallback}*/}
+			{/*		// name, checked, value делают студенты*/}
+
+			{/*		// checked={false}*/}
+			{/*		checked={arr[0].id === arr[0].id}*/}
+			{/*		value={arr[0].id}*/}
+			{/*		// name={name}*/}
+
+
+			{/*	/>*/}
+			{/*	<span>{arr[0].value}</span>*/}
+			{/*</label>*/}
+		</div>
+	)
 }
 
 export default SuperRadio
