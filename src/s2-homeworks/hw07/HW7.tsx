@@ -15,6 +15,7 @@ export const arr = [
     { id: 1, value: 'Pre-junior' },
     { id: 2, value: 'Junior' },
     { id: 3, value: 'Junior+' },
+    { id: 4, value: 'Junior-' },
 
 
 ] // value может быть изменено

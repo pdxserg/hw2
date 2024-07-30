@@ -9,7 +9,13 @@
 }
 
 .label {
+    display: flex;
+    padding-bottom: 10px;
+    font: 25px Arial, sans-serif;
+
 }
 
 .options {
+
 }
+

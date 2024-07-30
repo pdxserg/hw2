@@ -13,13 +13,10 @@ type DefaultSpanPropsType = DetailedHTMLProps<
 	HTMLAttributes<HTMLSpanElement>,
 	HTMLSpanElement
 >
-// type PupilArray={
-//
-// }
+
 type SuperRadioPropsType = Omit<DefaultRadioPropsType, 'type'> & {
 	options?: any[]
 	onChangeOption?: (option: any) => void
-	value: number
 	spanProps?: DefaultSpanPropsType // пропсы для спана
 }
 
@@ -35,19 +32,15 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
 	                                                   ...restProps
                                                    }) => {
 
-	// const [selectedValue, setSelectedValue] = useState(value);
-	// debugger
 	const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
 		if (onChangeOption) {
 			onChangeOption(e.currentTarget.value)
-			// setSelectedValue(e.currentTarget.value)
 		}
 	}
 
 	const finalRadioClassName = s.radio + (className ? ' ' + className : '')
 	const spanClassName = s.span + (spanProps?.className ? ' ' + spanProps.className : '')
 
-// debugger
 	const mappedOptions: any[] = options
 
 		? options.map((o) => (
@@ -64,7 +57,7 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
 					// checked={false}
 					checked={value == o.id}
 					value={o.id}
-					// name={name}
+					  name={name}
 
 					{...restProps}
 				/>
@@ -78,8 +71,7 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
 			</label>
 		))
 		: []
-// debugger
-	console.log(value)
+
 	return (
 		<div className={s.options}>
 			{mappedOptions}
