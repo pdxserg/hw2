@@ -6,7 +6,7 @@ let initialState: UserType[]
 
 beforeEach(() => {
     initialState = [
-        { _id: 0, name: 'Кот', age: 3 },
+        { _id: 0, name: 'Бот', age: 3 },
         { _id: 1, name: 'Александр', age: 66 },
         { _id: 2, name: 'Коля', age: 16 },
         { _id: 3, name: 'Виктор', age: 44 },
@@ -29,7 +29,7 @@ test('sort name down', () => {
         payload: 'down',
     })
 
-    expect(newState[0]._id).toBe(0)
+    expect(newState[0]._id).toBe(2)
 })
 test('check age 18', () => {
     const newState = homeWorkReducer(initialState, {
