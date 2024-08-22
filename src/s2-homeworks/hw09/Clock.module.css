@@ -1,7 +1,12 @@
 .buttonsContainer {
+    margin-top: 20px;
+
 }
 
 .clock {
+    margin-top: 20px;
+    margin-left: 40px;
+
 }
 
 .watch {
@@ -11,4 +16,8 @@
 }
 
 .more {
+    font-size: 15px;
+    margin-left: 40px;
+    opacity: 50%;
+
 }
