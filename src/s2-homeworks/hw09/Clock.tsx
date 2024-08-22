@@ -12,6 +12,32 @@ function Clock() {
     const [show, setShow] = useState<boolean>(false)
     //
 
+    useEffect(() => {
+        if( timerId !== undefined){
+            const idInterval =setInterval(()=>{
+                start()
+            },1000)
+            // @ts-ignore
+            setTimerId(idInterval)
+            return ()=>clearInterval(idInterval)
+        }
+
+
+    }, [date]);
+    const start = () => {
+        setDate(new Date())
+        setTimerId(1)
+        // пишут студенты // запустить часы (должно отображаться реальное время, а не +1)
+        // сохранить ид таймера (https://learn.javascript.ru/settimeout-setinterval#setinterval)
+
+    }
+
+    const stop = () => {
+        clearInterval(timerId)
+        setTimerId(undefined)
+        // пишут студенты // поставить часы на паузу, обнулить ид таймера (timerId <- undefined)
+
+    }
 
 
             const onMouseEnter = () => {
