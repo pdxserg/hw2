@@ -3,41 +3,40 @@ import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
 import {restoreState} from '../hw06/localStorage/localStorage'
 import s from './Clock.module.css'
 
+
 function Clock() {
     const [timerId, setTimerId] = useState<number | undefined>(undefined)
     // for autotests // не менять // можно подсунуть в локалСторэдж нужную дату, чтоб увидеть как она отображается
     // const [date, setDate] = useState<Date>(new Date(restoreState('hw9-date', Date.now())))
     const [date, setDate] = useState<Date>(new Date());
     const [show, setShow] = useState<boolean>(false)
-
-    useEffect(() => {
-       // @ts-ignore
-        const timerId=  setTimeout(()=>{
-            setDate(new Date())
-            setTimerId(timerId)
-            return clearTimeout(timerId)
-        },1000)
-
-    }, [  ]);
-
-
+    //
     const start = () => {
-        setDate(new Date())
+        setDate(new Date()); // Устанавливает текущее время
 
-        // пишут студенты // запустить часы (должно отображаться реальное время, а не +1)
-        // сохранить ид таймера (https://learn.javascript.ru/settimeout-setinterval#setinterval)
+    };
 
-    }
+
+
+        // Используем useEffect для запуска таймера
+        useEffect(() => {
+
+            const timerId: any = setInterval(start, 1000); // Обновляет время каждую секунду
+
+            setTimerId(timerId)
+
+            return () => clearInterval(timerId); // Очищает таймер при размонтировании компонента
+        }, [date]); // Пустой массив зависимостей означает, что эффект выполняется только при монтировании компонента
+
 
     const stop = () => {
-        clearTimeout(timerId)
-        setTimerId(undefined)
+        if (timerId !== undefined) { // Проверяем, что таймер установлен
+            clearInterval(timerId); // Останавливаем интервал
+            setTimerId(undefined);
 
-        // пишут студенты // поставить часы на паузу, обнулить ид таймера (timerId <- undefined)
+        }}
 
-    }
-
-    const onMouseEnter = () => {
+            const onMouseEnter = () => {
         setShow(true)
         // пишут студенты // показать дату если наведена мышка
 
@@ -88,14 +87,14 @@ function Clock() {
             <div className={s.buttonsContainer}>
                 <SuperButton
                     id={'hw9-button-start'}
-                    disabled={!!timerId} // пишут студенты // задизэйблить если таймер запущен
+                    disabled={timerId !== undefined} // пишут студенты // задизэйблить если таймер запущен
                     onClick={start}
                 >
                     start
                 </SuperButton>
                 <SuperButton
                     id={'hw9-button-stop'}
-                    disabled={!timerId} // пишут студенты // задизэйблить если таймер не запущен
+                    disabled={timerId === undefined} // пишут студенты // задизэйблить если таймер не запущен
                     onClick={stop}
                 >
                     stop
