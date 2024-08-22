@@ -11,30 +11,8 @@ function Clock() {
     const [date, setDate] = useState<Date>(new Date());
     const [show, setShow] = useState<boolean>(false)
     //
-    const start = () => {
-        setDate(new Date()); // Устанавливает текущее время
-
-    };
 
 
-
-        // Используем useEffect для запуска таймера
-        useEffect(() => {
-
-            const timerId: any = setInterval(start, 1000); // Обновляет время каждую секунду
-
-            setTimerId(timerId)
-
-            return () => clearInterval(timerId); // Очищает таймер при размонтировании компонента
-        }, [date]); // Пустой массив зависимостей означает, что эффект выполняется только при монтировании компонента
-
-
-    const stop = () => {
-        if (timerId !== undefined) { // Проверяем, что таймер установлен
-            clearInterval(timerId); // Останавливаем интервал
-            setTimerId(undefined);
-
-        }}
 
             const onMouseEnter = () => {
         setShow(true)
