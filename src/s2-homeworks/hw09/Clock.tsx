@@ -7,8 +7,8 @@ import s from './Clock.module.css'
 function Clock() {
     const [timerId, setTimerId] = useState<number | undefined>(undefined)
     // for autotests // не менять // можно подсунуть в локалСторэдж нужную дату, чтоб увидеть как она отображается
-    // const [date, setDate] = useState<Date>(new Date(restoreState('hw9-date', Date.now())))
-    const [date, setDate] = useState<Date>(new Date());
+    const [date, setDate] = useState<Date>(new Date(restoreState('hw9-date', Date.now())))
+    // const [date, setDate] = useState<Date>(new Date());
     const [show, setShow] = useState<boolean>(false)
 
 
@@ -54,10 +54,10 @@ function Clock() {
         setShow(false)
     }
 
-    const seconds = date.getSeconds()<10? "0"+ date.getSeconds():date.getSeconds()
+    const hours = date.getHours()<10? "0"+ date.getHours():date.getHours()
     const minutes = date.getMinutes()<10? "0"+ date.getMinutes():date.getMinutes()
-    const stringTime = [date.getHours(),":",minutes,":",seconds]|| <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
-    const stringDate = new Intl.DateTimeFormat("en-US").format(date) || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
+    const stringTime = [hours,":",minutes,]|| <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
+    const stringDate = new Intl.DateTimeFormat("ru").format(date) || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
 
     // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
     const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
