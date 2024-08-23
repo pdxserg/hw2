@@ -12,29 +12,29 @@ function Clock() {
     const [show, setShow] = useState<boolean>(false)
 
 
-    useEffect(() => {
-        if( timerId !== undefined){
+    // useEffect(() => {
+    //     if( timerId !== undefined){
+    //         const idInterval =setInterval(()=>{
+    //             start()
+    //         },1000)
+    //         // @ts-ignore
+    //         setTimerId(idInterval)
+    //         return ()=>clearInterval(idInterval)
+    //     }
+    // }, [date]);
+
+
+    const start = () => {
             const idInterval =setInterval(()=>{
-                start()
+                setDate(new Date())
             },1000)
             // @ts-ignore
             setTimerId(idInterval)
             return ()=>clearInterval(idInterval)
-        }
-    }, [date]);
-
-
-    const start = () => {
-            // const idInterval =setInterval(()=>{
-            //     setDate(new Date())
-            // },1000)
-            // // @ts-ignore
-            // setTimerId(idInterval)
-            // return ()=>clearInterval(idInterval)
         // пишут студенты // запустить часы (должно отображаться реальное время, а не +1)
         // сохранить ид таймера (https://learn.javascript.ru/settimeout-setinterval#setinterval)
-        setDate(new Date())
-        setTimerId(1)
+        // setDate(new Date())
+        // setTimerId(1)
     }
 
     const stop = () => {
@@ -56,7 +56,9 @@ function Clock() {
 
     const hours = date.getHours()<10? "0"+ date.getHours():date.getHours()
     const minutes = date.getMinutes()<10? "0"+ date.getMinutes():date.getMinutes()
-    const stringTime = [hours,":",minutes,]|| <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
+    const seconds = date.getSeconds()<10? "0"+ date.getSeconds():date.getSeconds()
+
+    const stringTime = [hours,":",minutes,":",seconds]|| <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
     const stringDate = new Intl.DateTimeFormat("ru").format(date) || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
 
     // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
