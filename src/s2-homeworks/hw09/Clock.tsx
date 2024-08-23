@@ -10,7 +10,7 @@ function Clock() {
     // const [date, setDate] = useState<Date>(new Date(restoreState('hw9-date', Date.now())))
     const [date, setDate] = useState<Date>(new Date());
     const [show, setShow] = useState<boolean>(false)
-    //
+
 
     useEffect(() => {
         if( timerId !== undefined){
@@ -21,15 +21,20 @@ function Clock() {
             setTimerId(idInterval)
             return ()=>clearInterval(idInterval)
         }
-
-
     }, [date]);
+
+
     const start = () => {
-        setDate(new Date())
-        setTimerId(1)
+            // const idInterval =setInterval(()=>{
+            //     setDate(new Date())
+            // },1000)
+            // // @ts-ignore
+            // setTimerId(idInterval)
+            // return ()=>clearInterval(idInterval)
         // пишут студенты // запустить часы (должно отображаться реальное время, а не +1)
         // сохранить ид таймера (https://learn.javascript.ru/settimeout-setinterval#setinterval)
-
+        setDate(new Date())
+        setTimerId(1)
     }
 
     const stop = () => {
