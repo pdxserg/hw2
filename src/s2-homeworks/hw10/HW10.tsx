@@ -9,7 +9,7 @@ import {InitStateTtype, loadingAC} from "./bll/loadingReducer";
 /*
 * 1 - в файле loadingReducer.ts дописать типы и логику ✅
 * 2 - получить isLoading из редакса✅
-* 3 - дописать функцию setLoading
+* 3 - дописать функцию setLoading✅
 * 4 - сделать стили в соответствии с дизайном
 * */
 
@@ -45,7 +45,6 @@ const HW10 = () => {
                     </div>
                 ) : (
                     <SuperButton
-                        className={"buttonsContainer"}
                         id={'hw10-button-start-loading'}
                         onClick={setLoading}
                     >

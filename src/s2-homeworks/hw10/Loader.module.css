@@ -1,6 +1,21 @@
+
+/* Стили для контейнера спиннера */
 .loader {
-    /*свг и/или анимация*/
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0, 0, 0, 0.1); /* Тонкий полупрозрачный край */
+    border-top: 5px solid #3498db;        /* Верхняя граница спиннера */
+    border-radius: 50%;                   /* Делаем круг */
+    animation: spin 1.5s linear infinite;  /* Анимация с продолжительностью 1,5 сек */
 }
-.buttonsContainer {
-    margin-left: 200px;
+
+/* Анимация вращения */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);            /* Начальное положение */
+    }
+    100% {
+        transform: rotate(360deg);          /* Вращение на 360 градусов */
+    }
 }
