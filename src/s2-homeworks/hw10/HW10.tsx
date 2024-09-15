@@ -1,13 +1,14 @@
 import React from 'react'
-import {useSelector} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import {AppStoreType} from './bll/store'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
 import s2 from '../../s1-main/App.module.css'
 import {Loader} from './Loader'
+import {InitStateTtype, loadingAC} from "./bll/loadingReducer";
 
 /*
 * 1 - в файле loadingReducer.ts дописать типы и логику ✅
-* 2 - получить isLoading из редакса
+* 2 - получить isLoading из редакса✅
 * 3 - дописать функцию setLoading
 * 4 - сделать стили в соответствии с дизайном
 * */
@@ -15,13 +16,22 @@ import {Loader} from './Loader'
 const HW10 = () => {
     // useSelector, useDispatch // пишет студент
 
-    // const isLoading = false
-    const isLoading = useSelector<AppStoreType>(state => state.loading)
+      // const isLoading = false
+    const loading = useSelector<AppStoreType,InitStateTtype>(state => state.loading)
+    // const  isLoading =loading.isLoading
+    //or
+    const {isLoading}=loading
+
+    const dispatch =useDispatch()
+    console.log(isLoading)
 
     const setLoading = () => { // пишет студент // показать крутилку на 1,5 секунд
         // dispatch
-
+        dispatch(loadingAC(true))
         // setTimeout
+        setTimeout(()=>{
+            dispatch(loadingAC(false))
+        },1500)
     }
 
     return (
