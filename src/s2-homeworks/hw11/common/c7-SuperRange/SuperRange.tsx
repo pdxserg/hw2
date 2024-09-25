@@ -7,9 +7,9 @@ const SuperRange: React.FC<SliderProps> = (props) => {
 
     return (
         <Slider defaultValue={props.defaultValue}
-                step={10}
-                value={props.value}
-                onChange={props.onChange}
+                step={2}
+                // value={props.value}
+                // onChange={props.onChange}
 
             sx={{ // стили для слайдера // пишет студент
                 width:200
