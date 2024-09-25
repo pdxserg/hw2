@@ -10,13 +10,10 @@ import {InitStateTtype, loadingAC} from "./bll/loadingReducer";
 * 1 - в файле loadingReducer.ts дописать типы и логику ✅
 * 2 - получить isLoading из редакса✅
 * 3 - дописать функцию setLoading✅
-* 4 - сделать стили в соответствии с дизайном
+* 4 - сделать стили в соответствии с дизайном✅
 * */
 
 const HW10 = () => {
-    // useSelector, useDispatch // пишет студент
-
-      // const isLoading = false
     const loading = useSelector<AppStoreType,InitStateTtype>(state => state.loading)
     // const  isLoading =loading.isLoading
     //or
