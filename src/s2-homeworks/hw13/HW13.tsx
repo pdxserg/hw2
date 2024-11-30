@@ -19,6 +19,7 @@ const HW13 = () => {
     const [text, setText] = useState('')
     const [info, setInfo] = useState('')
     const [image, setImage] = useState('')
+    const [disableButton, setDisableButton] = useState(false)
 
     const send = (x?: boolean | null) => () => {
         const url =
@@ -30,6 +31,7 @@ const HW13 = () => {
         setImage('')
         setText('')
         setInfo('...loading')
+        setDisableButton(true)
 
         axios
             .post(url, {success: x})
@@ -62,9 +64,7 @@ const HW13 = () => {
 
             })
             .finally(() => {
-                console.log()
-                // setText(data.errorText)
-                // setInfo(data.info)
+                setDisableButton(false)
             })
 
     }
@@ -79,6 +79,7 @@ const HW13 = () => {
                         id={'hw13-send-true'}
                         onClick={send(true)}
                         xType={'secondary'}
+                        disabled={disableButton }
                         // дописать
 
                     >
