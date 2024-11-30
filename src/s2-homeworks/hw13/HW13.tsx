@@ -42,12 +42,27 @@ const HW13 = () => {
 
             })
             .catch((e) => {
-                setCode('Код 500!')
-                setImage(error500)
-                 setText(e.response.data.errorText)
-                 setInfo(e.response.data.info)
+                if(e.response.status === 500){
+                    setCode('Код 500!')
+                    setImage(error500)
+                    setText(e.response.data.errorText)
+                    setInfo(e.response.data.info)
+                } else if(e.response.status === 400){
+                    setCode('Ошибка 400!')
+                    setImage(error400)
+                    setText(e.response.data.errorText)
+                    setInfo(e.response.data.info)
+                }else {
+                    setCode('Error!')
+                    setImage(errorUnknown)
+                    setText(e.message)
+                    setInfo(e.name)
+                }
+                console.log(e)
+
             })
             .finally(() => {
+                console.log()
                 // setText(data.errorText)
                 // setInfo(data.info)
             })
