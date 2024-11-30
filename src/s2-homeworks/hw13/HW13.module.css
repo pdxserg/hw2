@@ -4,19 +4,21 @@
 }
 
 .responseContainer {
+    display: flex;
 }
 
 .imageContainer {
-    min-height: 300px;
+    margin-top: 40px;
+    min-height: 200px;
 }
 
 .image {
-    max-height: 300px;
 }
 
 .textContainer{
-    min-width: 200px;
-
+    margin-left: 50px;
+    margin-top: 150px;
+    width: 500px; /* Set the desired width */
 }
 
 .code {
