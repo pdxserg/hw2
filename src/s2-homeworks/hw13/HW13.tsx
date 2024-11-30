@@ -89,6 +89,7 @@ const HW13 = () => {
                         id={'hw13-send-false'}
                         onClick={send(false)}
                         xType={'secondary'}
+                        disabled={disableButton }
                         // дописать
 
                     >
@@ -97,7 +98,7 @@ const HW13 = () => {
                     <SuperButton
                         id={'hw13-send-undefined'}
                         onClick={send(undefined)}
-                        xType={'secondary'}
+                        xType={'secondary'}                        disabled={disableButton }
                         // дописать
 
                     >
@@ -106,7 +107,7 @@ const HW13 = () => {
                     <SuperButton
                         id={'hw13-send-null'}
                         onClick={send(null)} // имитация запроса на не корректный адрес
-                        xType={'secondary'}
+                        xType={'secondary'}                        disabled={disableButton }
                         // дописать
 
                     >
