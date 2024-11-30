@@ -1,5 +1,5 @@
 const initState = {
-    themeId: 2,
+    themeId: 1,
 }
 type InitialStateType= typeof initState
 export const themeReducer = (state:InitialStateType = initState, action: ActionsTypes): InitialStateType => { // fix any

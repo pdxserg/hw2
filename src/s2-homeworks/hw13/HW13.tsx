@@ -36,6 +36,8 @@ const HW13 = () => {
             .then((res) => {
                 setCode('Код 200!')
                 setImage(success200)
+                setText('... all Ok)')
+                setInfo('cod 200 mean probably all good)')
                 // дописать
 
             })
