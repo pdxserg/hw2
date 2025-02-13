@@ -25,7 +25,6 @@ const getTechs = (find: string) => {
 }
 
 const HW14 = () => {
-	console.log("14homework")
 	const [find, setFind] = useState('')
 	const [isLoading, setLoading] = useState(false)
   // const [searchParams, setSearchParams] = useSearchParams()
@@ -37,8 +36,7 @@ const HW14 = () => {
 			.then((res ) => {
 				 setLoading(false)
 				// делает
-				console.log('14',res)
-				if (res) { // ✅ Проверяем, что res не null
+				if (res) { // Проверяем, что res не null
 					setTechs(res.data.techs);
 				}
 				// сохранить пришедшие данные
@@ -48,21 +46,21 @@ const HW14 = () => {
 	}
 
 	const onChangeText = (value: string) => {
+		console.log('value',value)
 		setFind(value)
 		// делает студент
-		//  setSearchParams(find)
 		// добавить/заменить значение в квери урла
-		// (
 
-		//
+		//  setSearchParams(find)
 	}
 
 	useEffect(() => {
 		console.log("useEffect")
 		// const params = Object.fromEntries(searchParams)
-		 sendQuery('')
 		//  sendQuery(params.find || '')
 		// setFind(params.find || '')
+
+		sendQuery("")
 	}, [])
 
 	const mappedTechs = techs.map(t => (
