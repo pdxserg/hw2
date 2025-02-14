@@ -27,7 +27,7 @@ const getTechs = (find: string) => {
 const HW14 = () => {
 	const [find, setFind] = useState('')
 	const [isLoading, setLoading] = useState(false)
-  // const [searchParams, setSearchParams] = useSearchParams()
+   const [searchParams, setSearchParams] = useSearchParams()
 	const [techs, setTechs] = useState<string[]>([])
 
 	const sendQuery = (value: string) => {
@@ -51,14 +51,14 @@ const HW14 = () => {
 		// делает студент
 		// добавить/заменить значение в квери урла
 
-		//  setSearchParams(find)
+		  setSearchParams(find)
 	}
 
 	useEffect(() => {
 		console.log("useEffect")
-		// const params = Object.fromEntries(searchParams)
-		//  sendQuery(params.find || '')
-		// setFind(params.find || '')
+		const params = Object.fromEntries(searchParams)
+		 sendQuery(params.find || '')
+		setFind(params.find || '')
 
 		sendQuery("")
 	}, [])
