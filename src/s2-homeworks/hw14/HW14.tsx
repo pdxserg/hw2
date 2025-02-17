@@ -51,7 +51,7 @@ const HW14 = () => {
 		// делает студент
 		// добавить/заменить значение в квери урла
 
-		  setSearchParams(find)
+		  setSearchParams({ find: value })
 	}
 
 	useEffect(() => {
@@ -59,8 +59,6 @@ const HW14 = () => {
 		const params = Object.fromEntries(searchParams)
 		 sendQuery(params.find || '')
 		setFind(params.find || '')
-
-		sendQuery("")
 	}, [])
 
 	const mappedTechs = techs.map(t => (

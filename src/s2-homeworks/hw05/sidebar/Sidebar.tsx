@@ -54,7 +54,7 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                         // className={open? s.nav: ""}
                         // className={...} // делает студент
                     >
-                        Junior Plus
+                        Junior+
                     </NavLink>
                 </nav>
             </aside>
