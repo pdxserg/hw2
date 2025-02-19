@@ -44,9 +44,9 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
 
 	return (
 		<div>
-			<div>
-				Choose the theme
-			</div>
+			{/*<div>*/}
+			{/*	Choose the theme*/}
+			{/*</div>*/}
 			<select
 				className={finalSelectClassName}
 				onChange={onChangeCallback}
