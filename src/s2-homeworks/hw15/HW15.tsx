@@ -52,10 +52,12 @@ const HW15 = () => {
         getTechs(params)
             .then((res) => {
                 // делает студент
-
                 // сохранить пришедшие данные
-
-                //
+                console.log(res)
+                if (res){
+                    setTechs(res.data.techs)
+                }
+                setLoading(false   )
             })
     }
 
