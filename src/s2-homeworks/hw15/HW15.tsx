@@ -41,7 +41,7 @@ const getTechs = (params: ParamsType) => {
 const HW15 = () => {
     const [sort, setSort] = useState('')
     const [page, setPage] = useState(1)
-    const [count, setCount] = useState(4)
+    const [count, setCount] = useState(6)
     const [idLoading, setLoading] = useState(false)
     const [totalCount, setTotalCount] = useState(100)
     const [searchParams, setSearchParams] = useSearchParams()
@@ -56,6 +56,7 @@ const HW15 = () => {
                 console.log(res)
                 if (res){
                     setTechs(res.data.techs)
+                    setTotalCount(res.data.totalCount)
                 }
                 setLoading(false   )
             })
