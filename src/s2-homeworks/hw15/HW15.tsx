@@ -74,15 +74,17 @@ const HW15 = () => {
     }
 
     const onChangeSort = (newSort: string) => {
+        debugger
         // делает студент
-
         // setSort(
         // setPage(1) // при сортировке сбрасывать на 1 страницу
-
         // sendQuery(
         // setSearchParams(
-
         //
+        setPage(1)
+        setSort(newSort)
+        sendQuery(newSort)
+        setSearchParams(newSort)
     }
 
     useEffect(() => {
