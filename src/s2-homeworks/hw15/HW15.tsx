@@ -46,7 +46,7 @@ const HW15 = () => {
     const [totalCount, setTotalCount] = useState(100)
     const [searchParams, setSearchParams] = useSearchParams()
     const [techs, setTechs] = useState<TechType[]>([])
-
+    console.log("totalCount",totalCount)
     const sendQuery = (params: any) => {
         setLoading(true)
         getTechs(params)
@@ -68,6 +68,7 @@ const HW15 = () => {
         // setCount(
         // sendQuery(
         // setSearchParams(
+        setPage(newPage)
 
     }
 
