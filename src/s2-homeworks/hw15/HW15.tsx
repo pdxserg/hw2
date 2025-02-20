@@ -66,11 +66,9 @@ const HW15 = () => {
         // делает студент
         // setPage(
         // setCount(
-
         // sendQuery(
         // setSearchParams(
 
-        //
     }
 
     const onChangeSort = (newSort: string) => {

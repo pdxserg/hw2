@@ -8,7 +8,8 @@ type DefaultSelectPropsType = DetailedHTMLProps<
 >
 
 type SuperSelectPropsType = DefaultSelectPropsType & {
-	options?: ThemeType[]
+	options: ThemeType[]//[{id: 4, value: "4"},{id: 7, value: "7"},{id: 10, value: "10"},
+
 	onChangeOption?: (option: number) => void
 }
 
@@ -17,8 +18,11 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
 	                                                     className,
 	                                                     onChange,
 	                                                     onChangeOption,
+	                                                     value,
 	                                                     ...restProps
                                                      }) => {
+
+
 	const mappedOptions: any[] = options
 		? options.map((o) => (
 			<option
@@ -36,7 +40,10 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
 		console.log(e.currentTarget.value)
 		if (onChangeOption) {
 			onChangeOption(+e.currentTarget.value)
+
 		}
+		//try
+		// setValue(+e.currentTarget.value)
 
 	}
 
