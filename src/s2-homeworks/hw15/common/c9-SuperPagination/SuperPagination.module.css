@@ -1,8 +1,10 @@
 .pagination {
     display: flex;
+    line-height: 4;
 }
 
 .text1 {
+padding-left: 60px;
 
 }
 

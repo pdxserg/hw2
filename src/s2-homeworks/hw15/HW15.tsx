@@ -47,9 +47,9 @@ const HW15 = () => {
 	const [totalCount, setTotalCount] = useState(100)
 	const [searchParams, setSearchParams] = useSearchParams()
 	const [techs, setTechs] = useState<TechType[]>([])
-	console.log("Count", count)
+	console.log("totalCount", totalCount)
 	const sendQuery = (params: any) => {
-
+debugger
 		setLoading(true)
 		getTechs(params)
 			.then((res) => {
@@ -77,13 +77,11 @@ const HW15 = () => {
 	}
 
 	const onChangeSort = (newSort: string) => {
-
 		// делает студент
 		// setSort(
 		// setPage(1) // при сортировке сбрасывать на 1 страницу
 		// sendQuery(
 		// setSearchParams(
-		//
 		setPage(1)
 		setSort(newSort)
 		sendQuery({page, count, sort: newSort})
@@ -91,6 +89,7 @@ const HW15 = () => {
 	}
 
 	useEffect(() => {
+		debugger
 		const params = Object.fromEntries(searchParams)
 		sendQuery({page: params.page, count: params.count, sort})
 		setPage(+params.page || 1)
@@ -108,11 +107,7 @@ const HW15 = () => {
 			</div>
 		</div>
 	))
-// if (idLoading){
-// 	<div style={{ display: 'flex' }}>
-// 		<CircularProgress />
-// 	</div>
-// }
+
 	return (
 		<div id={'hw15'}>
 			<div className={s2.hwTitle}>Homework #15</div>
@@ -130,13 +125,11 @@ const HW15 = () => {
 						totalCount={totalCount}
 						onChange={onChangePagination}
 					/>
-
 					<div className={s.rowHeader}>
 						<div className={s.techHeader}>
 							tech
 							<SuperSort sort={sort} value={'tech'} onChange={onChangeSort}/>
 						</div>
-
 						<div className={s.developerHeader}>
 							developer
 							<SuperSort sort={sort} value={'developer'} onChange={onChangeSort}/>
