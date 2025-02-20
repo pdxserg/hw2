@@ -46,8 +46,9 @@ const HW15 = () => {
     const [totalCount, setTotalCount] = useState(100)
     const [searchParams, setSearchParams] = useSearchParams()
     const [techs, setTechs] = useState<TechType[]>([])
-    console.log("totalCount",totalCount)
+    console.log("Count",count)
     const sendQuery = (params: any) => {
+        debugger
         setLoading(true)
         getTechs(params)
             .then((res) => {
@@ -68,12 +69,14 @@ const HW15 = () => {
         // setCount(
         // sendQuery(
         // setSearchParams(
+debugger
         setPage(newPage)
-
+        setCount(newCount)
+        sendQuery({page:newPage, count:newCount, sort})
     }
 
     const onChangeSort = (newSort: string) => {
-        debugger
+
         // делает студент
         // setSort(
         // setPage(1) // при сортировке сбрасывать на 1 страницу
@@ -82,15 +85,15 @@ const HW15 = () => {
         //
         setPage(1)
         setSort(newSort)
-        sendQuery(newSort)
+        // sendQuery(newSort)
         setSearchParams(newSort)
     }
 
     useEffect(() => {
         const params = Object.fromEntries(searchParams)
-        sendQuery({page: params.page, count: params.count})
-        setPage(+params.page || 1)
-        setCount(+params.count || 4)
+        sendQuery({page: params.page, count: params.count,sort})
+        setPage(+params.page || 2)
+        setCount(+params.count || 7)
     }, [])
 
     const mappedTechs = techs.map(t => (
