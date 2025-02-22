@@ -49,13 +49,9 @@ const HW15 = () => {
 	const [techs, setTechs] = useState<TechType[]>([])
 	console.log("totalCount", totalCount)
 	const sendQuery = (params: any) => {
-debugger
 		setLoading(true)
 		getTechs(params)
 			.then((res) => {
-				// делает студент
-				// сохранить пришедшие данные
-				console.log(res)
 				if (res) {
 					setTechs(res.data.techs)
 					setTotalCount(res.data.totalCount)
@@ -70,7 +66,6 @@ debugger
 		// setCount(
 		// sendQuery(
 		// setSearchParams(
-		debugger
 		setPage(newPage)
 		setCount(newCount)
 		sendQuery({page: newPage, count: newCount, sort})
@@ -89,7 +84,7 @@ debugger
 	}
 
 	useEffect(() => {
-		debugger
+
 		const params = Object.fromEntries(searchParams)
 		sendQuery({page: params.page, count: params.count, sort})
 		setPage(+params.page || 1)

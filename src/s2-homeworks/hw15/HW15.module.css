@@ -10,10 +10,12 @@ width: 800px;
 }
 
 .techHeader {
+    cursor: pointer;
     width: 50vw;
 }
 
 .developerHeader {
+    cursor: pointer;
 }
 
 .row {
