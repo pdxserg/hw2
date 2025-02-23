@@ -31,7 +31,7 @@ const SuperPagination: React.FC<SuperPaginationPropsType> = (
 		// пишет студент
 		setNewCount(event)
 		// setLastPage(Math.ceil(totalCount / event))
-		onChange(3, event)
+		onChange(1, event)
 	}
 
 	return (
